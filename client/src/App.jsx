@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/data");
+      const response = await fetch("https://ex7-server.vercel.app/api/data");
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -27,7 +27,7 @@ const App = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/data", {
+      const response = await fetch("https://ex7-server.vercel.app/api/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/data/${editItemId}`,
+        `https://ex7-server.vercel.app/api/data/${editItemId}`,
         {
           method: "PUT",
           headers: {
@@ -70,7 +70,7 @@ const App = () => {
 
   const handleDeleteItem = async (id) => {
     try {
-      await fetch(`http://localhost:3000/api/data/${id}`, {
+      await fetch(`https://ex7-server.vercel.app/api/data/${id}`, {
         method: "DELETE",
       });
       setData(data.filter((item) => item.id !== id));
